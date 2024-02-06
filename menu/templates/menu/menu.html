@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load menu_tag %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block title %} {% draw_menu slug=slug %} {% endblock %}
+
+
+{% block content %}
+    {% draw_menu slug=slug as menu %}
+    <nav>
+        <ul class="topmenu">
+            {% for point in menu.points.all %}
+                <li>
+                    <a href="">{{ point }}</a>
+                    <ul class="submenu">
+                        {% for underpoint in point.underpoint.all %}
+                            <li><a href="{{ underpoint.url }}">{{ underpoint }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+{% endblock %}
+

@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    background-image: url(https://coolsen.ru/wp-content/uploads/2021/12/NO-20211223_142630-6.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+
+.menus{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu_a{
+  font-family: 'Kaushan Script', cursive;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+h1{
+  text-align: center;
+}

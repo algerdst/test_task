@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load menu_tag %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+
+
+{% block title %} {% endblock %}
+
+
+{% block content %}
+    {% get_menus as get_menus %}
+    <h1>Cписок меню</h1>
+    <div class="menus">
+        {% for menu in get_menus %}
+            <a href="{% url 'menu' slug=menu.slug %}" class="menu_a">{{ menu }}</a>
+        {% endfor %}
+    </div>
+
+{% endblock %}
